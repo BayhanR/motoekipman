@@ -17,7 +17,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
         getFilterOptions()
     ])
 
-    const hasFilters = Object.keys(resolvedParams).some(k => ['brand', 'sale', 'minP', 'maxP', 'color', 'size', 'category', 'occasion', 'fit', 'length', 'coverageLevel'].includes(k))
+    const hasFilters = Object.keys(resolvedParams).some(k => ['brand', 'sale', 'minP', 'maxP', 'color', 'size', 'category', 'condition', 'gender', 'helmetType'].includes(k))
     const title = hasFilters ? 'Filtreye Uygun Ürünler' : 'Tüm Ürünler'
 
     return (

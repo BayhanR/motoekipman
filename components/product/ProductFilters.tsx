@@ -8,6 +8,7 @@ import { Slider } from '@/components/ui/slider'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
 import { Filter } from 'lucide-react'
+import { BrandLogo } from '@/components/shared/BrandLogo'
 
 interface ProductFiltersProps {
     brands: { id: string, name: string, slug: string }[]
@@ -86,9 +87,9 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
             {/* Global Loading Overlay for query transitions */}
             {isPending && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#070707]/30 backdrop-blur-sm transition-all duration-300">
-                    <div className="bg-[#111] p-6 px-10 rounded-2xl border border-[#C9A66B]/50 shadow-2xl flex flex-col items-center gap-4">
-                        <div className="w-8 h-8 border-[3px] border-[#C9A66B] border-t-transparent rounded-full animate-spin" />
-                        <span className="text-[#C9A66B] font-bold text-xs tracking-[0.2em]">YÜKLENİYOR</span>
+                    <div className="bg-[#111] p-6 px-10 rounded-2xl border border-[#EF4444]/50 shadow-2xl flex flex-col items-center gap-4">
+                        <div className="w-8 h-8 border-[3px] border-[#EF4444] border-t-transparent rounded-full animate-spin" />
+                        <span className="text-[#EF4444] font-bold text-xs tracking-[0.2em]">YÜKLENİYOR</span>
                     </div>
                 </div>
             )}
@@ -107,7 +108,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                 params.set('page', '1')
                                 startTransition(() => router.push(`?${params.toString()}`, { scroll: false }))
                             }}
-                            className="w-full bg-[#111] border border-gray-800 rounded p-2.5 text-sm font-semibold text-gray-300 focus:border-[#C9A66B] outline-none cursor-pointer hover:border-gray-500 transition-colors"
+                            className="w-full bg-[#111] border border-gray-800 rounded p-2.5 text-sm font-semibold text-gray-300 focus:border-[#EF4444] outline-none cursor-pointer hover:border-gray-500 transition-colors"
                         >
                             <option value="newest">En Yeniler (Öne Çıkan)</option>
                             <option value="price-asc">Fiyata Göre Artan</option>
@@ -126,27 +127,17 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                     <button
                                         key={b.id}
                                         onClick={() => toggleParam('brand', b.slug || b.name)}
-                                        className={`relative h-12 rounded-md border flex items-center justify-center p-2 transition-all bg-white cursor-pointer ${isSelected ? 'ring-2 ring-[#C9A66B] border-transparent scale-105' : 'border-gray-800 hover:border-gray-500 hover:scale-105'}`}
+                                        className={`relative h-12 rounded-md border flex items-center justify-center p-2 transition-all bg-white cursor-pointer ${isSelected ? 'ring-2 ring-[#EF4444] border-transparent scale-105' : 'border-gray-800 hover:border-gray-500 hover:scale-105'}`}
                                         title={b.name}
                                     >
-                                        <img
-                                            src={`/images/brands/${b.slug === 'diger' ? 'mina' : b.slug}.${BRAND_LOGO_EXT[b.slug] || 'png'}`}
-                                            alt={b.name}
-                                            className="object-contain w-full h-full mix-blend-multiply opacity-90"
-                                            onError={(e) => {
-                                                e.currentTarget.style.display = 'none';
-                                                if (e.currentTarget.parentElement) {
-                                                    e.currentTarget.parentElement.innerHTML = `<span class="text-[10px] text-black font-bold uppercase truncate px-1">${b.name}</span>`
-                                                }
-                                            }}
-                                        />
+                                        <BrandLogo name={b.name} className="w-full h-full" />
                                     </button>
                                 )
                             })}
                         </div>
                     </div>
 
-                    {/* Modest Fashion Enums via Generic Checkboxes */}
+                    {/* Motorcycle Categories via Generic Checkboxes */}
                     {options?.categories && options.categories.length > 0 && (
                         <div>
                             <h4 className="font-semibold text-xs mb-4 uppercase tracking-wider text-gray-300">Kategori</h4>
@@ -226,7 +217,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                         <button
                                             key={`desktop-color-${c.name}`}
                                             onClick={() => toggleParam('color', c.name)}
-                                            className={`w-8 h-8 rounded-full border-2 ${isSelected ? 'border-white ring-2 ring-[#C9A66B] ring-offset-2 ring-offset-[#070707]' : 'border-gray-700/50 hover:scale-110'} transition-all`}
+                                            className={`w-8 h-8 rounded-full border-2 ${isSelected ? 'border-white ring-2 ring-[#EF4444] ring-offset-2 ring-offset-[#070707]' : 'border-gray-700/50 hover:scale-110'} transition-all`}
                                             style={{ backgroundColor: c.hex }}
                                             title={c.name}
                                         />
@@ -247,7 +238,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                         <button
                                             key={`desktop-size-${s}`}
                                             onClick={() => toggleParam('size', s)}
-                                            className={`h-10 px-3 min-w-[2.5rem] rounded border flex items-center justify-center text-xs transition-colors ${isSelected ? 'bg-[#C9A66B] border-[#C9A66B] text-black font-bold' : 'bg-transparent border-gray-700 text-gray-300 hover:border-gray-500 hover:text-white'}`}
+                                            className={`h-10 px-3 min-w-[2.5rem] rounded border flex items-center justify-center text-xs transition-colors ${isSelected ? 'bg-[#EF4444] border-[#EF4444] text-black font-bold' : 'bg-transparent border-gray-700 text-gray-300 hover:border-gray-500 hover:text-white'}`}
                                         >
                                             {s}
                                         </button>
@@ -273,7 +264,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                 <label className="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Min (₺)</label>
                                 <input
                                     type="number"
-                                    className="w-full bg-[#111] border border-gray-800 rounded p-2 text-sm text-gray-300 focus:border-[#C9A66B] outline-none transition-colors"
+                                    className="w-full bg-[#111] border border-gray-800 rounded p-2 text-sm text-gray-300 focus:border-[#EF4444] outline-none transition-colors"
                                     value={priceRange[0]}
                                     onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
                                 />
@@ -282,7 +273,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                 <label className="text-[10px] uppercase text-gray-500 font-bold mb-1 block">Max (₺)</label>
                                 <input
                                     type="number"
-                                    className="w-full bg-[#111] border border-gray-800 rounded p-2 text-sm text-gray-300 focus:border-[#C9A66B] outline-none transition-colors"
+                                    className="w-full bg-[#111] border border-gray-800 rounded p-2 text-sm text-gray-300 focus:border-[#EF4444] outline-none transition-colors"
                                     value={priceRange[1]}
                                     onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
                                 />
@@ -290,7 +281,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                         </div>
                         <Button
                             onClick={applyPrice}
-                            className="w-full mt-4 h-10 bg-[#C9A66B]/10 hover:bg-[#C9A66B] text-[#C9A66B] hover:text-black border border-[#C9A66B]/50 transition-all font-bold tracking-wide"
+                            className="w-full mt-4 h-10 bg-[#EF4444]/10 hover:bg-[#EF4444] text-[#EF4444] hover:text-black border border-[#EF4444]/50 transition-all font-bold tracking-wide"
                         >
                             Fiyatı Uygula
                         </Button>
@@ -298,7 +289,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
 
                     {/* Sale Toggle: Premium Styled Switch */}
                     <div className="border-t border-gray-800 pt-8 pb-4">
-                        <label className="relative flex items-center justify-between cursor-pointer group bg-[#111111] p-4 rounded-xl border border-gray-800 hover:border-[#C9A66B]/50 transition-all">
+                        <label className="relative flex items-center justify-between cursor-pointer group bg-[#111111] p-4 rounded-xl border border-gray-800 hover:border-[#EF4444]/50 transition-all">
                             <span className="text-sm font-bold tracking-wide text-gray-300 group-hover:text-white transition-colors">
                                 Sadece İndirimdekiler
                             </span>
@@ -315,7 +306,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                     }}
                                     className="sr-only peer"
                                 />
-                                <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C9A66B]"></div>
+                                <div className="w-11 h-6 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#EF4444]"></div>
                             </div>
                         </label>
                     </div>
@@ -333,7 +324,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                                 <button
                                     key={`mobile-${b.id}`}
                                     onClick={() => toggleParam('brand', b.slug || b.name)}
-                                    className={`snap-center shrink-0 w-24 h-12 rounded-md border flex items-center justify-center p-2 transition-all bg-white cursor-pointer ${isSelected ? 'ring-2 ring-[#C9A66B] border-transparent scale-105' : 'border-gray-800 hover:border-gray-500'}`}
+                                    className={`snap-center shrink-0 w-24 h-12 rounded-md border flex items-center justify-center p-2 transition-all bg-white cursor-pointer ${isSelected ? 'ring-2 ring-[#EF4444] border-transparent scale-105' : 'border-gray-800 hover:border-gray-500'}`}
                                 >
                                     <img
                                         src={`/images/brands/${b.slug === 'diger' ? 'mina' : b.slug}.${BRAND_LOGO_EXT[b.slug] || 'png'}`}
@@ -353,7 +344,7 @@ export function ProductFilters({ brands, options }: ProductFiltersProps) {
                 </div>
 
                 <div className="pt-2">
-                    <label className="relative flex items-center justify-between cursor-pointer group bg-[#111111] p-4 rounded-xl border border-gray-800 hover:border-[#C9A66B]/50 transition-all shadow-sm">
+                    <label className="relative flex items-center justify-between cursor-pointer group bg-[#111111] p-4 rounded-xl border border-gray-800 hover:border-[#EF4444]/50 transition-all shadow-sm">
                         <span className="text-sm font-bold tracking-wide text-gray-300 group-hover:text-white transition-colors">
                             Sadece İndirimdekiler
                         </span>

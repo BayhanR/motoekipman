@@ -15,41 +15,42 @@ export default function IletisimPage() {
             {/* Hero Section */}
             <div className="relative h-[300px] md:h-[400px] w-full bg-black overflow-hidden shrink-0">
                 <img
-                    src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2669&auto=format&fit=crop"
-                    alt="Contact Hero"
-                    className="object-cover w-full h-full opacity-50"
+                    src="https://images.unsplash.com/photo-1558981403-c5f91cbba527?q=80&w=2670&auto=format&fit=crop"
+                    alt="Motorcycle Gear"
+                    className="object-cover w-full h-full opacity-40 grayscale"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4 text-center">
-                    <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 drop-shadow-lg">İletişim</h1>
-                    <p className="text-lg text-gray-200 font-light drop-shadow">Moda ve şıklık yolculuğunuzda size yardımcı olmaktan mutluluk duyarız.</p>
+                    <h1 className="text-4xl md:text-6xl font-black italic tracking-tighter mb-4 drop-shadow-2xl">BİZE <span className="text-[#EF4444]">ULAŞIN</span></h1>
+                    <p className="text-sm md:text-base text-gray-300 font-bold tracking-[0.3em] uppercase drop-shadow">GÜVENLİ SÜRÜŞ, KALİTELİ EKİPMAN</p>
                 </div>
             </div>
 
             <div className="container mx-auto px-4 max-w-5xl py-12 relative z-10 -mt-20 md:-mt-32">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-xl shadow-xl border border-gray-100">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-[#111] p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-800">
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-xl font-semibold mb-2 text-[#C9A66B]">Adresimiz</h2>
-                            <p className="text-gray-600 leading-relaxed">
-                                Atatürk Mahallesi, Mimar Sinan Cd. No:45<br />
-                                Kemalpaşa, İzmir<br />
+                            <h2 className="text-lg font-black italic tracking-wider mb-2 text-[#EF4444] uppercase">Adresimiz</h2>
+                            <p className="text-gray-400 font-medium leading-relaxed">
+                                MotoEkipman2Er Showroom<br />
+                                Bağdat Caddesi, No:321<br />
+                                Kadıköy, İstanbul<br />
                                 Türkiye
                             </p>
                         </div>
 
                         <div>
-                            <h2 className="text-xl font-semibold mb-2 text-[#C9A66B]">İletişim Bilgileri</h2>
-                            <p className="text-gray-600">
-                                <strong>Telefon:</strong> +90 (232) 123 45 67<br />
-                                <strong>E-posta:</strong> info@minagiyim.com
+                            <h2 className="text-lg font-black italic tracking-wider mb-2 text-[#EF4444] uppercase">İletişim Bilgileri</h2>
+                            <p className="text-gray-400 font-medium">
+                                <strong className="text-white">Telefon:</strong> +90 (216) 555 44 33<br />
+                                <strong className="text-white">E-posta:</strong> info@motoekipman2el.com
                             </p>
                         </div>
 
                         <div>
-                            <h2 className="text-xl font-semibold mb-2 text-[#C9A66B]">Çalışma Saatleri</h2>
-                            <p className="text-gray-600">
-                                Pazartesi - Cumartesi: 09:00 - 19:30<br />
-                                Pazar: Kapalı
+                            <h2 className="text-lg font-black italic tracking-wider mb-2 text-[#EF4444] uppercase">Hizmet Saatleri</h2>
+                            <p className="text-gray-400 font-medium">
+                                Hafta İçi: 10:00 - 20:00<br />
+                                Pazar: 12:00 - 18:00
                             </p>
                         </div>
                     </div>

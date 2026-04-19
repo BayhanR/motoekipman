@@ -23,9 +23,9 @@ export function AdminSidebar() {
     ]
 
     return (
-        <aside className="w-64 bg-[#111111] text-white flex flex-col shrink-0 hidden md:flex min-h-screen">
+        <aside className="w-64 bg-[#070707] text-white flex flex-col shrink-0 hidden md:flex min-h-screen border-r border-gray-800">
             <div className="p-6">
-                <h2 className="text-xl font-serif font-bold text-[#C9A66B]">Yönetim Paneli</h2>
+                <h2 className="text-xl font-black italic tracking-tighter text-[#EF4444]">YÖNETİM<span className="text-gray-500 text-sm ml-1 uppercase font-bold tracking-widest not-italic">Paneli</span></h2>
             </div>
             <nav className="flex-1 px-4 space-y-2">
                 {items.map(item => {
@@ -35,8 +35,8 @@ export function AdminSidebar() {
                             key={item.href}
                             href={item.href}
                             className={cn(
-                                "flex items-center gap-3 px-4 py-3 rounded-md transition-colors font-medium text-sm",
-                                isActive ? "bg-[#C9A66B] text-black" : "text-gray-300 hover:bg-gray-800"
+                                "flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-bold text-xs uppercase tracking-widest",
+                                isActive ? "bg-[#EF4444] text-white shadow-[0_0_15px_rgba(239,68,68,0.3)]" : "text-gray-400 hover:bg-gray-800/50 hover:text-white"
                             )}
                         >
                             {item.icon}

@@ -18,8 +18,7 @@ const BRAND_LOGO_EXT: Record<string, string> = {
     nihan: 'png',
     vena: 'avif',
     zuhre: 'svg',
-    diger: 'png',
-    mina: 'png'
+    diger: 'png'
 }
 
 export function BrandLogo({ name, logoUrl, className = '' }: BrandLogoProps) {
@@ -37,32 +36,25 @@ export function BrandLogo({ name, logoUrl, className = '' }: BrandLogoProps) {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)+/g, '')
 
-    if (slug === 'diger' || slug === 'mina') {
+    if (slug === 'diger' || slug === 'mina' || slug === 'moto-ekipman-2el' || imgError) {
         return (
-            <div className={`relative overflow-hidden cursor-pointer ${className}`} title="Mina Giyim">
-                <Image src="/images/brands/mina.png" alt="Mina Giyim" fill className="object-contain drop-shadow-md hover:scale-105 transition-all" />
+            <div className={`flex flex-col items-center justify-center bg-black/40 border border-gray-800 rounded-lg p-2 ${className}`} title="MotoEkipman2El">
+                <span className="text-[10px] md:text-[12px] font-black italic tracking-tighter text-[#EF4444] leading-none uppercase">MOTO</span>
+                <span className="text-[8px] md:text-[10px] font-bold text-gray-400 leading-none tracking-widest uppercase">EKİPMAN</span>
             </div>
         )
     }
 
-    if (!imgError) {
-        const url = logoUrl || `/images/brands/${slug}.${BRAND_LOGO_EXT[slug] || 'png'}`
-        return (
-            <div className={`relative overflow-hidden ${className}`}>
-                <Image
-                    src={url}
-                    alt={name}
-                    fill
-                    className="object-contain drop-shadow-md"
-                    onError={() => setImgError(true)}
-                />
-            </div>
-        )
-    }
-
+    const url = logoUrl || `/images/brands/${slug}.${BRAND_LOGO_EXT[slug] || 'png'}`
     return (
-        <div className={`flex items-center justify-center bg-black/60 backdrop-blur-sm text-[10px] font-semibold text-white rounded-sm px-2 ${className}`}>
-            {name}
+        <div className={`relative overflow-hidden ${className}`}>
+            <Image
+                src={url}
+                alt={name}
+                fill
+                className="object-contain drop-shadow-md"
+                onError={() => setImgError(true)}
+            />
         </div>
     )
 }
