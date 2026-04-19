@@ -8,57 +8,57 @@ export default async function AdminDashboard() {
 
     return (
         <div className="max-w-6xl">
-            <h1 className="text-3xl font-bold text-gray-900 mb-8 font-serif">Özet Bilgiler</h1>
+            <h1 className="text-3xl font-black italic tracking-tighter text-[#EF4444] mb-8 uppercase">Özet <span className="text-gray-400 not-italic font-bold tracking-widest text-xl ml-2">Bilgiler</span></h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <Card className="shadow-sm">
+                <Card className="bg-[#111] border-gray-800 shadow-2xl">
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
-                        <CardTitle className="text-sm font-medium text-gray-500">Toplam Ürün</CardTitle>
-                        <Package className="w-4 h-4 text-[#C9A66B]" />
+                        <CardTitle className="text-[10px] font-black uppercase tracking-widest text-gray-500">Toplam Ürün</CardTitle>
+                        <Package className="w-4 h-4 text-[#EF4444]" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold text-gray-900">{stats.totalProducts}</div>
+                        <div className="text-3xl font-black italic tracking-tighter text-white">{stats.totalProducts}</div>
                     </CardContent>
                 </Card>
 
-                <Card className="shadow-sm">
+                <Card className="bg-[#111] border-gray-800 shadow-2xl">
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
-                        <CardTitle className="text-sm font-medium text-gray-500">Tükenen Stok</CardTitle>
-                        <AlertCircle className="w-4 h-4 text-red-500" />
+                        <CardTitle className="text-[10px] font-black uppercase tracking-widest text-gray-500">Tükenen Stok</CardTitle>
+                        <AlertCircle className="w-4 h-4 text-red-600" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold text-red-600">{stats.outOfStock}</div>
+                        <div className="text-3xl font-black italic tracking-tighter text-red-600">{stats.outOfStock}</div>
                     </CardContent>
                 </Card>
 
-                <Card className="shadow-sm">
+                <Card className="bg-[#111] border-gray-800 shadow-2xl">
                     <CardHeader className="flex flex-row items-center justify-between pb-2">
-                        <CardTitle className="text-sm font-medium text-gray-500">Kayıtlı Kullanıcı</CardTitle>
+                        <CardTitle className="text-[10px] font-black uppercase tracking-widest text-gray-500">Kayıtlı Kullanıcı</CardTitle>
                         <Users className="w-4 h-4 text-blue-500" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold text-gray-900">{stats.totalUsers}</div>
+                        <div className="text-3xl font-black italic tracking-tighter text-white">{stats.totalUsers}</div>
                     </CardContent>
                 </Card>
             </div>
 
-            <Card className="shadow-sm border-gray-200">
-                <CardHeader className="border-b bg-gray-50/50">
-                    <CardTitle className="text-lg">Son Sistem Hareketleri</CardTitle>
+            <Card className="bg-[#111] border-gray-800 shadow-2xl">
+                <CardHeader className="border-b border-gray-800 bg-black/40">
+                    <CardTitle className="text-sm font-black uppercase tracking-widest text-[#EF4444]">Son Sistem Hareketleri</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-6">
                     <div className="space-y-4">
                         {stats.recentLogs.map(log => (
-                            <div key={log.id} className="flex items-center justify-between border-b pb-4 last:border-0 last:pb-0">
+                            <div key={log.id} className="flex items-center justify-between border-b border-gray-800 pb-4 last:border-0 last:pb-0">
                                 <div className="flex items-center gap-4">
-                                    <Activity className="w-8 h-8 p-1.5 bg-gray-100 rounded-full text-gray-500" />
+                                    <Activity className="w-10 h-10 p-2.5 bg-black rounded-full text-[#EF4444] border border-gray-800" />
                                     <div>
-                                        <p className="font-semibold text-sm text-gray-900">{log.action}</p>
+                                        <p className="font-bold text-sm text-white uppercase tracking-tight">{log.action}</p>
                                         <p className="text-xs text-gray-500">{log.entity} #{log.entityId} — {log.user?.name || log.user?.email}</p>
                                     </div>
                                 </div>
-                                <div className="text-xs text-gray-400">
-                                    {log.createdAt.toLocaleString('tr-TR')}
+                                <div className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">
+                                    {new Date(log.createdAt).toLocaleString('tr-TR')}
                                 </div>
                             </div>
                         ))}

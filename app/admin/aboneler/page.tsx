@@ -9,35 +9,35 @@ export default async function AdminAbonelerPage() {
 
     return (
         <div>
-            <h1 className="text-2xl font-bold font-serif text-gray-900 mb-6">Stok Haberci Aboneleri</h1>
+            <h1 className="text-2xl font-black italic tracking-tighter text-[#EF4444] mb-6 uppercase">Stok Haberci Aboneleri</h1>
 
-            <div className="bg-white border rounded-lg overflow-hidden shadow-sm">
+            <div className="bg-[#111] border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">
                 <table className="w-full text-sm">
-                    <thead className="bg-gray-50 border-b">
+                    <thead className="bg-black/50 border-b border-gray-800">
                         <tr>
-                            <th className="p-4 text-left font-medium text-gray-600">E-posta</th>
-                            <th className="p-4 text-left font-medium text-gray-600">Beklenen Ürün / Varyant</th>
-                            <th className="p-4 text-left font-medium text-gray-600">Kayıt Tarihi</th>
-                            <th className="p-4 text-left font-medium text-gray-600">Durum</th>
+                            <th className="p-4 text-left font-bold text-xs uppercase tracking-widest text-gray-500">E-posta</th>
+                            <th className="p-4 text-left font-bold text-xs uppercase tracking-widest text-gray-500">Beklenen Ürün / Varyant</th>
+                            <th className="p-4 text-left font-bold text-xs uppercase tracking-widest text-gray-500">Kayıt Tarihi</th>
+                            <th className="p-4 text-left font-bold text-xs uppercase tracking-widest text-gray-500">Durum</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-gray-300">
                         {subs.map(s => (
-                            <tr key={s.id} className="border-b last:border-0 hover:bg-gray-50">
-                                <td className="p-4 font-medium">{s.email}</td>
-                                <td className="p-4 text-gray-600">{s.variant.product.name} ({s.variant.size} - {s.variant.colorName})</td>
+                            <tr key={s.id} className="border-b border-gray-800 last:border-0 hover:bg-white/5 transition-colors">
+                                <td className="p-4 font-bold text-white">{s.email}</td>
+                                <td className="p-4 text-gray-400">{s.variant.product.name} ({s.variant.size} - {s.variant.colorName})</td>
                                 <td className="p-4 text-gray-500">{new Date(s.createdAt).toLocaleDateString('tr-TR')}</td>
                                 <td className="p-4">
                                     {s.notifiedAt ? (
-                                        <span className="text-green-600 bg-green-50 px-2 py-1 rounded text-xs font-semibold">Gönderildi</span>
+                                        <span className="text-green-500 bg-green-500/10 px-3 py-1 rounded-full text-[10px] font-black uppercase">Gönderildi</span>
                                     ) : (
-                                        <span className="text-orange-600 bg-orange-50 px-2 py-1 rounded text-xs font-semibold">Bekliyor</span>
+                                        <span className="text-red-500 bg-red-500/10 px-3 py-1 rounded-full text-[10px] font-black uppercase">Bekliyor</span>
                                     )}
                                 </td>
                             </tr>
                         ))}
                         {subs.length === 0 && (
-                            <tr><td colSpan={4} className="p-8 text-center text-gray-500">Kayıtlı abone bulunamadı.</td></tr>
+                            <tr><td colSpan={4} className="p-8 text-center text-gray-600 italic">Kayıtlı abone bulunamadı.</td></tr>
                         )}
                     </tbody>
                 </table>

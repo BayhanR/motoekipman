@@ -12,14 +12,14 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 
 export const metadata: Metadata = {
   title: {
-    default: 'MotoEkipman2El | İkinci El Motosiklet Ekipmanları',
-    template: '%s | MotoEkipman2El'
+    default: 'MotoEkipman2.El | İkinci El Motosiklet Ekipmanları',
+    template: '%s | MotoEkipman2.El'
   },
-  description: 'En kaliteli ikinci el ve sıfır motosiklet kaskları, montları, eldivenleri ve koruyucu ekipmanları MotoEkipman2El\'de.',
+  description: 'En kaliteli ikinci el ve sıfır motosiklet kaskları, montları, eldivenleri ve koruyucu ekipmanları MotoEkipman2.El\'de.',
   keywords: ['motosiklet ekipmanları', 'ikinci el kask', 'motor montu', 'motosiklet aksesuar', 'dainese', 'alpinestars', 'agv'],
   openGraph: {
-    title: "MotoEkipman2El",
-    description: "En kaliteli ikinci el ve sıfır motosiklet kaskları, montları, eldivenleri ve koruyucu ekipmanları MotoEkipman2El'de.",
+    title: "MotoEkipman2.El",
+    description: "En kaliteli ikinci el ve sıfır motosiklet kaskları, montları, eldivenleri ve koruyucu ekipmanları MotoEkipman2.El'de.",
     type: 'website',
     locale: 'tr_TR',
   }

@@ -40,7 +40,7 @@ export function Navbar({ isAdmin }: { isAdmin?: boolean }) {
                     {/* Orta: Logo */}
                     <div className={`flex justify-center items-center relative transition-opacity duration-300 ${isSearchOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                         <Link href="/" className="flex items-center justify-center transition-transform hover:scale-105 duration-300 z-50">
-                            <span className="text-2xl md:text-3xl font-black italic tracking-tighter text-[#EF4444]">MOTO<span className="text-gray-200">EKİPMAN</span><span className="text-lg text-gray-500 ml-1">2EL</span></span>
+                            <span className="text-2xl md:text-3xl font-black italic tracking-tighter text-[#EF4444]">MOTO<span className="text-gray-200">EKİPMAN</span><span className="text-lg text-gray-500 ml-1">2.EL</span></span>
                         </Link>
                     </div>
 

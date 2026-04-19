@@ -31,7 +31,7 @@ export default function IletisimPage() {
                         <div>
                             <h2 className="text-lg font-black italic tracking-wider mb-2 text-[#EF4444] uppercase">Adresimiz</h2>
                             <p className="text-gray-400 font-medium leading-relaxed">
-                                MotoEkipman2Er Showroom<br />
+                                MotoEkipman2.El Showroom<br />
                                 Bağdat Caddesi, No:321<br />
                                 Kadıköy, İstanbul<br />
                                 Türkiye

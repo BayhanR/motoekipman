@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     return {
-        title: `${product.name} | MotoEkipman2El`,
+        title: `${product.name} | MotoEkipman2.El`,
         description: product.description.substring(0, 160),
     }
 }

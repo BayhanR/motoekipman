@@ -30,8 +30,7 @@ const BRAND_LOGO_EXT: Record<string, string> = {
     nihan: 'png',
     vena: 'avif',
     zuhre: 'svg',
-    diger: 'png',
-    mina: 'png'
+    diger: 'png'
 }
 
 export function ProductFilters({ brands, options }: ProductFiltersProps) {

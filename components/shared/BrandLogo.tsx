@@ -38,7 +38,7 @@ export function BrandLogo({ name, logoUrl, className = '' }: BrandLogoProps) {
 
     if (slug === 'diger' || slug === 'mina' || slug === 'moto-ekipman-2el' || imgError) {
         return (
-            <div className={`flex flex-col items-center justify-center bg-black/40 border border-gray-800 rounded-lg p-2 ${className}`} title="MotoEkipman2El">
+            <div className={`flex flex-col items-center justify-center bg-black/40 border border-gray-800 rounded-lg p-2 ${className}`} title="MotoEkipman2.El">
                 <span className="text-[10px] md:text-[12px] font-black italic tracking-tighter text-[#EF4444] leading-none uppercase">MOTO</span>
                 <span className="text-[8px] md:text-[10px] font-bold text-gray-400 leading-none tracking-widest uppercase">EKİPMAN</span>
             </div>

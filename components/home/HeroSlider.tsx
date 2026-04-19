@@ -8,26 +8,26 @@ const HERO_SLIDES = [
     {
         id: 1,
         type: 'image',
-        src: '/images/slider/moto-slide-1.jpg',
-        title: 'MOTOEKİPMAN2EL',
-        subtitle: 'Güvenli sürüşün adresi. Kaliteli ikinci el ve sıfır ekipmanlar.',
-        cta: 'İlanları İncele'
+        src: '/images/slider/hero-1.png',
+        title: '',
+        subtitle: '',
+        cta: 'Hemen İncele'
     },
     {
         id: 2,
         type: 'image',
-        src: '/images/slider/moto-slide-2.jpg',
-        title: 'Performans ve Güven',
-        subtitle: 'En iyi markaların kask, mont ve eldiven seçenekleri.',
-        cta: 'Kasklara Göz At'
+        src: '/images/slider/hero-2.png',
+        title: '',
+        subtitle: '',
+        cta: 'Koleksiyonu Gör'
     },
     {
         id: 3,
         type: 'image',
-        src: '/images/slider/moto-slide-3.jpg',
-        title: 'Zırhlı Montlar',
-        subtitle: 'Tam koruma sağlayan, sıfır ayarında deri ve tekstil montlar.',
-        cta: 'Montları Gör'
+        src: '/images/slider/hero-3.png',
+        title: '',
+        subtitle: '',
+        cta: 'Ekipman Ara'
     }
 ]
 
@@ -56,7 +56,7 @@ export function HeroSlider() {
                 <motion.div
                     key={currentIndex}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.6 }}
+                    animate={{ opacity: 0.9 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.5, ease: "easeInOut" }}
                     className="absolute inset-0"
@@ -97,31 +97,35 @@ export function HeroSlider() {
                 ))}
             </div>
 
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4 pointer-events-none">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4 pointer-events-none pb-20 md:pb-32">
                 <AnimatePresence mode="wait">
-                    <motion.h1
-                        key={`title-${currentIndex}`}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -30 }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] tracking-tight max-w-4xl"
-                    >
-                        {HERO_SLIDES[currentIndex].title}
-                    </motion.h1>
+                    {HERO_SLIDES[currentIndex].title && (
+                        <motion.h1
+                            key={`title-${currentIndex}`}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -30 }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                            className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] tracking-tight max-w-4xl"
+                        >
+                            {HERO_SLIDES[currentIndex].title}
+                        </motion.h1>
+                    )}
                 </AnimatePresence>
 
                 <AnimatePresence mode="wait">
-                    <motion.p
-                        key={`subtitle-${currentIndex}`}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="text-lg md:text-2xl font-light mb-8 max-w-2xl drop-shadow-md text-gray-200"
-                    >
-                        {HERO_SLIDES[currentIndex].subtitle}
-                    </motion.p>
+                    {HERO_SLIDES[currentIndex].subtitle && (
+                        <motion.p
+                            key={`subtitle-${currentIndex}`}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                            className="text-lg md:text-2xl font-light mb-8 max-w-2xl drop-shadow-md text-gray-200"
+                        >
+                            {HERO_SLIDES[currentIndex].subtitle}
+                        </motion.p>
+                    )}
                 </AnimatePresence>
 
                 <AnimatePresence mode="wait">
@@ -134,7 +138,7 @@ export function HeroSlider() {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.5, delay: 0.6 }}
                         onClick={() => document.getElementById('urunler')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="pointer-events-auto px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-medium tracking-widest uppercase text-sm transition-colors cursor-pointer"
+                        className="pointer-events-auto px-10 py-4 bg-white/5 backdrop-blur-md border border-white/40 text-white font-black italic tracking-[0.2em] uppercase text-xs transition-all cursor-pointer shadow-2xl"
                     >
                         {HERO_SLIDES[currentIndex].cta}
                     </motion.button>
