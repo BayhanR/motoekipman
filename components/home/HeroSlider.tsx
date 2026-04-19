@@ -4,10 +4,16 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
-const HERO_SLIDES = [
-    { id: 1, type: 'image' as const, src: '/images/slider/hero-1.png' },
-    { id: 2, type: 'image' as const, src: '/images/slider/hero-2.png' },
-    { id: 3, type: 'image' as const, src: '/images/slider/hero-3.png' },
+interface HeroSlide {
+    id: number
+    type: 'image' | 'video'
+    src: string
+}
+
+const HERO_SLIDES: HeroSlide[] = [
+    { id: 1, type: 'image', src: '/images/slider/hero-1.png' },
+    { id: 2, type: 'image', src: '/images/slider/hero-2.png' },
+    { id: 3, type: 'image', src: '/images/slider/hero-3.png' },
 ]
 
 export function HeroSlider() {
