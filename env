@@ -1,0 +1,10 @@
+DATABASE_URL="mysql://root:@localhost:3306/tesetturmagaza"
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="super_secret_key_change_in_production"
+
+RESEND_API_KEY="re_123456789"
+
+UPLOADTHING_SECRET="sk_live_123456789"
+UPLOADTHING_APP_ID="app1234"
+
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
