@@ -21,8 +21,8 @@ export async function createProduct(data: any) {
 
     const {
         name, brandId, description, basePrice, isOnSale, salePrice,
-        sizeType, images, category, coverageLevel, length, fit, occasion,
-        pieceCount, variants
+        sizeType, images, category, condition, gender, helmetType,
+        certification, material, season, variants
     } = data;
 
     // Generate slug from name
@@ -39,12 +39,13 @@ export async function createProduct(data: any) {
             salePrice: salePrice ? Number(salePrice) : null,
             sizeType,
             images,
-            category: category || 'DRESS',
-            coverageLevel: coverageLevel || null,
-            length: length || null,
-            fit: fit || null,
-            occasion: occasion || null,
-            pieceCount: pieceCount ? Number(pieceCount) : null,
+            category: category || 'HELMETS',
+            condition: condition || 'USED',
+            gender: gender || 'UNISEX',
+            helmetType: helmetType || null,
+            certification: certification || null,
+            material: material || null,
+            season: season || null,
             variants: {
                 create: variants.map((v: any) => ({
                     colorName: v.colorName,
